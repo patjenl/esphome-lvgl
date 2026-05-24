@@ -1,7 +1,7 @@
 sensor:
 
   - platform: homeassistant
-    id: light_brightness
+    id: hang_lights_dimmer
     entity_id: light.shellydimmer2_hanglights
     attribute: brightness
     on_value:
