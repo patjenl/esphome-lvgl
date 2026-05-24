@@ -42,7 +42,22 @@ lvgl:
       pad_right: 5
       
       widgets:
-      
+        - slider:
+            id: hang_lights_dimmer_slider
+            height: $button_height
+            width: $button_width
+            pad_all: 8
+            min_value: 0
+            max_value: 255
+            ext_click_area: 20
+            on_release:
+              - homeassistant.action:
+                  action: light.turn_on
+                  data:
+                    entity_id: light.shellydimmer2_hanglights
+                  data_template:
+                    brightness: !lambda return int(x);
+                    
         # Office Features Scene
         - button: 
             height: $button_height
