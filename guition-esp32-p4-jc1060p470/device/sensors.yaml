@@ -18,7 +18,7 @@ sensor:
           id: temperatures
           text:
             format: "%d° / %d°"
-            args: [ '(int)round(id(office_temperature).state)', '(int)round(x)' ]
+            args: [ '(int)round(id(outdoor_temperature).state)', '(int)round(x)' ]
 
   - platform: homeassistant
     entity_id: sensor.outside_temperature
@@ -28,7 +28,7 @@ sensor:
           id: temperatures
           text:
             format: "%d° / %d°"
-            args: [ '(int)round(x)', '(int)round(id(outdoor_temperature).state)' ]
+            args: [ '(int)round(x)', '(int)round(id(office_temperature).state)' ]
 
   # Office Blind Position
   - platform: homeassistant
