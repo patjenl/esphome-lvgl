@@ -1,5 +1,14 @@
 sensor:
 
+  - platform: homeassistant
+    id: light_brightness
+    entity_id: light.shellydimmer2_hanglights
+    attribute: brightness
+    on_value:
+      - lvgl.slider.update:
+          id: dimmer_slider
+          value: !lambda return x;
+          
   # Header Outdoor Temperate
   - platform: homeassistant
     entity_id: sensor.shellyht_office_temperature
