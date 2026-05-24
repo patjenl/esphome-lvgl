@@ -6,7 +6,7 @@ sensor:
     attribute: brightness
     on_value:
       - lvgl.slider.update:
-          id: dimmer_slider
+          id: hang_lights_dimmer_slider
           value: !lambda return x;
           
   # Header Outdoor Temperate
