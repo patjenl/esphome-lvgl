@@ -43,7 +43,7 @@ lvgl:
       
       widgets:
         - obj:
-            id: Dining_Room_Hang_Lights
+            id: hang_lights_dimmer_slider
             x: 20
             y: 20
             width: 200
