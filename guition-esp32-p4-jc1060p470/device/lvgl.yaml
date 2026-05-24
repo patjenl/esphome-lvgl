@@ -42,21 +42,101 @@ lvgl:
       pad_right: 5
       
       widgets:
-        - slider:
-            id: hang_lights_dimmer_slider
-            height: $button_height
-            width: $button_width
-            pad_all: 8
-            min_value: 0
-            max_value: 255
-            ext_click_area: 20
-            on_release:
-              - homeassistant.action:
-                  action: light.turn_on
-                  data:
-                    entity_id: light.shellydimmer2_hanglights
-                  data_template:
-                    brightness: !lambda return int(x);
+        - obj:
+            id: Dining_Room_Hang_Lights
+            x: 20
+            y: 20
+            width: 200
+            height: 100
+            bg_color: 0x070E1B
+            bg_opa: 95%
+            border_width: 1
+            border_color: 0x162038
+            border_opa: 20%
+            radius: 16
+            shadow_width: 0
+            shadow_color: 0xFBBF24
+            shadow_opa: 0%
+            scrollbar_mode: "OFF"
+            pad_all: 0
+            widgets:
+              - bar:
+                  id: dm_bar_accent
+                  x: 10
+                  y: 10
+                  width: 4
+                  height: 80
+                  value: 100
+                  min_value: 0
+                  max_value: 100
+                  indicator:
+                    bg_color: 0xFBBF24
+                    radius: 3
+                  bg_color: 0x0F1929
+                  radius: 9999
+              - label:
+                  id: dm_lbl_room
+                  x: 20
+                  y: 30
+                  width: 94
+                  height: 18
+                  text: "Hang Lights"
+                  text_color: 0xF1F5F9
+                  text_align: LEFT
+                  long_mode: CLIP
+                  text_font: montserrat_14
+              - label:
+                  id: dm_lbl_pct
+                  x: 120
+                  y: 17
+                  width: 70
+                  height: 24
+                  text: "75%"
+                  text_color: 0xFBBF24
+                  text_align: RIGHT
+                  long_mode: CLIP
+                  text_font: montserrat_20
+              - label:
+                  id: dm_lbl_sub
+                  x: 20
+                  y: 54
+                  width: 170
+                  height: 14
+                  text: "Dining Room Hang lights"
+                  text_color: 0x8E9FB8
+                  text_align: LEFT
+                  long_mode: CLIP
+                  text_font: montserrat_10
+              - slider:
+                  id: dm_slider
+                  x: 20
+                  y: 74
+                  width: 170
+                  height: 16
+                  value: 100
+                  min_value: 0
+                  max_value: 255
+                  bg_color: 0x0F1929
+                  border_width: 0
+                  radius: 9999
+                  bg_opa: 100%
+                  knob:
+                    bg_color: 0xFFFFFF
+                    border_width: 0
+                    radius: 50
+                    pad_all: 0
+                  indicator:
+                    bg_color: 0xFBBF24
+                    bg_opa: 80%
+                    radius: 8
+                  animated: true
+                  on_release:
+                    - homeassistant.action:
+                        action: light.turn_on
+                        data:
+                          entity_id: light.shellydimmer2_hanglights
+                        data_template:
+                          brightness: !lambda return int(x);
                     
         # Office Features Scene
         - button: 
