@@ -42,12 +42,6 @@ lvgl:
       pad_right: 5
       
       widgets:
-lvgl:
-  pages:
-    - id: canvas_2
-      bg_color: 0x111827
-      pad_all: 0
-      widgets:
         - obj:
             id: hang_lights_dimmer
             x: 20
